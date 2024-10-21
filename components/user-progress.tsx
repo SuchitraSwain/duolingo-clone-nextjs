@@ -5,7 +5,10 @@ import Image from "next/image";
 import { InfinityIcon } from "lucide-react";
 
 type Props = {
-  activeCourse: any;
+  activeCourse: {
+    imageSrc: string;
+    title: string;
+  };
   hearts: number;
   points: number;
   hasActiveSubscription: boolean;
