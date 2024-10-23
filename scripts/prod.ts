@@ -5,7 +5,7 @@ import { neon } from "@neondatabase/serverless";
 import * as schema from "../db/schema";
 
 const sql = neon(process.env.DATABASE_URL!);
-
+// @ts-ignore
 const db = drizzle(sql, { schema });
 
 const main = async () => {
@@ -26,7 +26,9 @@ const main = async () => {
     // Insert courses
     const courses = await db
       .insert(schema.courses)
-      .values([{ title: "Spanish", imageSrc: "/es.svg" }])
+      .values([
+        { title: "Spanish", imageSrc: "/es.svg" },
+      ])
       .returning();
 
     // For each course, insert units

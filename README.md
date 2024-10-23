@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1>Build a Duolingo Clone With Nextjs, React, Drizzle, Stripe (2024)</h1>
+<h3>This is a repository for a "Build a Duolingo Clone With Nextjs, React, Drizzle, Stripe (2024)</h3>
+Key Features:
+- 🌐 Next.js 14 & server actions
+- 🗣 AI Voices using Elevenlabs AI
+- 🎨 Beautiful component system using Shadcn UI
+- 🎭 Amazing characters thanks to KenneyNL
+- 🔐 Auth using Clerk
+- 🔊 Sound effects
+- ❤️ Hearts system
+- 🌟 Points / XP system
+- 💔 No hearts left popup
+- 🚪 Exit confirmation popup
+- 🔄 Practice old lessons to regain hearts
+- 🏆 Leaderboard
+- 🗺 Quests milestones
+- 🛍 Shop system to exchange points with hearts
+- 💳 Pro tier for unlimited hearts using Stripe
+- 🏠 Landing page
+- 📊 Admin dashboard React Admin
+- 🌧 ORM using DrizzleORM
+- 💾 PostgresDB using NeonDB
+- 🚀 Deployment on Vercel
+- 📱 Mobile responsiveness
 
-## Getting Started
+### Prerequisites
 
-First, run the development server:
+**Node version 14.x**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Cloning the repository
+
+```shell
+git clone https://github.com/bouzayenilyes/lingo.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install packages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```shell
+npm i
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Setup .env file
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+```js
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=""
+CLERK_SECRET_KEY=""
+DATABASE_URL="postgresql://..."
+STRIPE_API_KEY=""
+NEXT_PUBLIC_APP_URL="http://localhost:3000"
+STRIPE_WEBHOOK_SECRET=""
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Setup Drizzle ORM
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```shell
+npm run db:push
 
-## Deploy on Vercel
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Seed the app
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```shell
+npm run db:seed
+
+```
+
+or
+
+```shell
+npm run db:prod
+
+```
+
+### Start the app
+
+```shell
+npm run dev
+```

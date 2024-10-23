@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { Loader } from "lucide-react";
-import {
-  ClerkLoaded,
-  ClerkLoading,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
+import { 
+  ClerkLoaded, 
+  ClerkLoading, 
+  SignInButton, 
+  SignUpButton, 
+  SignedIn, 
+  SignedOut
 } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -29,9 +29,8 @@ export default function Home() {
             <SignedOut>
               <SignUpButton
                 mode="modal"
-                signInForceRedirectUrl={"/learn"}
-                signInFallbackRedirectUrl={"/learn"}
-                fallbackRedirectUrl={"/learn"}
+                afterSignInUrl="/learn"
+                afterSignUpUrl="/learn"
               >
                 <Button size="lg" variant="secondary" className="w-full">
                   Get Started
@@ -39,9 +38,8 @@ export default function Home() {
               </SignUpButton>
               <SignInButton
                 mode="modal"
-                signUpForceRedirectUrl={"/learn"}
-                signUpFallbackRedirectUrl={"/learn"}
-                fallbackRedirectUrl={"/learn"}
+                afterSignInUrl="/learn"
+                afterSignUpUrl="/learn"
               >
                 <Button size="lg" variant="primaryOutline" className="w-full">
                   I already have an account
@@ -50,12 +48,14 @@ export default function Home() {
             </SignedOut>
             <SignedIn>
               <Button size="lg" variant="secondary" className="w-full" asChild>
-                <Link href="/learn">Continue Learning</Link>
+                <Link href="/learn">
+                  Continue Learning
+                </Link>
               </Button>
             </SignedIn>
           </ClerkLoaded>
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -15,7 +15,9 @@ export const Header = ({ title }: Props) => {
           <ArrowLeft className="h-5 w-5 stroke-2 text-neutral-400" />
         </Button>
       </Link>
-      <h1 className="font-bold text-lg">{title}</h1>
+      <h1 className="font-bold text-lg">
+        {title}
+      </h1>
       <div />
     </div>
   );

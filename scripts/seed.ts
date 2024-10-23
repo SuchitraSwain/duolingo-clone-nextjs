@@ -4,8 +4,8 @@ import { neon } from "@neondatabase/serverless";
 
 import * as schema from "../db/schema";
 
-const sql = neon(process.env.DATABASE_URL!);
-
+const sql = neon(process.env.DATABASE_URL!); 
+// @ts-ignore
 const db = drizzle(sql, { schema });
 
 const main = async () => {
@@ -51,7 +51,7 @@ const main = async () => {
         title: "Unit 1",
         description: "Learn the basics of Spanish",
         order: 1,
-      },
+      }
     ]);
 
     await db.insert(schema.lessons).values([
@@ -211,3 +211,4 @@ const main = async () => {
 };
 
 main();
+
