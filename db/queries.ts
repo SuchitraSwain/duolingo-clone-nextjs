@@ -222,6 +222,8 @@ const DAY_IN_MS = 86_400_000;
 export const getUserSubscription = cache(async () => {
   const { userId } = await auth();
 
+  console.log(userId)
+
   if (!userId) return null;
 
   const data = await db.query.userSubscription.findFirst({
